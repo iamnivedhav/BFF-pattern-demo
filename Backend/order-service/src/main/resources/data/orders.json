@@ -1,0 +1,50 @@
+[
+    {
+      "id": "ORD98765",
+      "customerId": "CUST101",
+      "date": "2025-08-15",
+      "status": "Delivered",
+      "items": [
+        {
+          "productId": 1,
+          "productName": "Wireless Headphones",
+          "quantity": 1,
+          "price": 2999.00
+        }
+      ],
+      "shippingAddress": {
+        "street": "123 Tech Lane",
+        "city": "Gadget City",
+        "state": "KA",
+        "zipCode": "560001"
+      },
+      "totalAmount": 2999.00
+    },
+    {
+      "id": "ORD98766",
+      "customerId": "CUST102",
+      "date": "2025-08-25",
+      "status": "Shipped",
+      "items": [
+        {
+          "productId": 2,
+          "productName": "Smartphone X200",
+          "quantity": 1,
+          "price": 15999.00
+        },
+        {
+          "productId": 1,
+          "productName": "Wireless Headphones",
+          "quantity": 1,
+          "price": 2999.00
+        }
+      ],
+      "shippingAddress": {
+        "street": "456 Code Avenue",
+        "city": "Silicon Valley",
+        "state": "TN",
+        "zipCode": "600001"
+      },
+      "totalAmount": 18998.00
+    }
+  ]
