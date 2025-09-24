@@ -1,0 +1,75 @@
+/* Center the mobile view */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;         /* full screen height */
+  margin: 0;
+  background-color: #f2f2f2; /* grey background around phone */
+}
+
+/* Simulated phone screen */
+#app {
+  width: 375px;   /* iPhone typical width */
+  height: 667px;  /* iPhone typical height */
+  border: 12px solid #000;  /* phone bezel */
+  border-radius: 30px;      /* rounded phone edges */
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  overflow-y: auto;   /* allow scrolling inside phone */
+  background: #fff;
+}
+
+/* Hide scrollbars on app for cleaner look */
+#app::-webkit-scrollbar {
+  display: none;
+}
+
+
+header {
+  background: #0077cc;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1em;
+  padding: 1em;
+}
+
+.product-card, .order-card {
+  border: 1px solid #ddd;
+  padding: 1em;
+  border-radius: 5px;
+  background: #fafafa;
+  text-align: center;
+}
+
+.product-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+.product-card .rating {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.stars {
+    color: #ffc107; /* A nice gold/yellow color */
+}

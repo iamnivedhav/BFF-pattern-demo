@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="title">Product Details</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>My Awesome Shop</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="orders.html">Orders</a>
+        </nav>
+    </header>
+
+    <main class="product-detail-container">
+        <section class="product-gallery">
+            <div class="main-image">
+                <img id="mainImage" src="images/placeholder.jpg" alt="Product Image">
+            </div>
+            <div class="thumbnails" id="thumbnails">
+                </div>
+        </section>
+
+        <section class="product-info">
+            <h2 id="productTitle"></h2> <p id="brand" class="product-brand"></p>
+            <div class="product-meta-top">
+                <span id="avgRating" class="rating-value"></span>
+                <span class="stars" id="productStars"></span> (<span id="totalReviews" class="review-count"></span> reviews)
+            </div>
+            
+            <p class="product-price"><strong id="price"></strong> <span id="offer" class="badge"></span></p>
+            <p id="stock" class="product-stock"></p>
+            <p id="sold" class="product-sales"></p>
+
+            <div class="product-options">
+                <div class="option-group">
+                    <label for="sizes">Size:</label>
+                    <select id="sizes" class="option-select">
+                        </select>
+                </div>
+                <div class="option-group">
+                    <label for="colors">Color:</label>
+                    <select id="colors" class="option-select">
+                        </select>
+                </div>
+            </div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+            <button class="buy-now-btn">Buy Now</button>
+        </section>
+
+        <section class="product-tabs">
+            <div class="tab-header">
+                <button class="tab-btn active" data-tab="description">Description</button>
+                <button class="tab-btn" data-tab="specs">Specifications</button>
+                <button class="tab-btn" data-tab="reviews">Reviews</button>
+                <button class="tab-btn" data-tab="qna">Q&A</button>
+            </div>
+            <div class="tab-content">
+                <div id="description" class="tab-pane active">
+                    <h3>Product Description</h3>
+                    <p id="longDesc"></p>
+                </div>
+                <div id="specs" class="tab-pane">
+                    <h3>Specifications</h3>
+                    <ul id="specsList">
+                        </ul>
+                </div>
+                <div id="reviews" class="tab-pane">
+                    <h3>Customer Reviews</h3>
+                    <div id="reviewList">
+                        </div>
+                </div>
+                <div id="qna" class="tab-pane">
+                    <h3>Questions & Answers</h3>
+                    <div id="qnaList">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-products">
+            <h2>Related Products</h2>
+            <div class="product-list" id="relatedList">
+                </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 My Awesome Store. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        // Simple tab switching logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabPanes.forEach(pane => pane.classList.remove('active'));
+
+                    button.classList.add('active');
+                    document.getElementById(button.dataset.tab).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
